@@ -25,7 +25,32 @@ roundsLeft DWORD 20
 
 .code
 main PROC
-	
+
+	call Clrscr
+	call Randomize
+
+	mov dh, 2
+	mov dl, 30
+	call Gotoxy
+	mov edx, OFFSET titleMsg
+	call WriteString
+
+	mov dh, 4
+	mov dl, 22
+	call Gotoxy
+	mov edx, OFFSET ruleMsg
+	call WriteString
+
+	mov dh, 5
+	mov dl, 14
+	call Gotoxy
+	mov edx, OFFSET ruleMsg2
+	call WriteString
+
+	mov eax, 2500
+	call Delay
+	call Clrscr
+
 gameLoop:
 	mov eax, 9
 	call RandomRange
