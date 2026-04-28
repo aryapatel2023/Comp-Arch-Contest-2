@@ -48,5 +48,41 @@ gameLoop:
 	je showChicago
 	jmp showChonken
 
+showChicken:
+	move esi, OFFSET word 1
+	inc correctCount
+	jmp showRandomWord
+	
+showChuck:
+	move esi, OFFSET word 2
+	jmp showRandomWord
+
+showChick:
+	move esi, OFFSET word 3
+	jmp showRandomWord
+
+showDhicken:
+	move esi, OFFSET word 4
+	jmp showRandomWord
+
+showKitchen:
+	move esi, OFFSET word 5
+	jmp showRandomWord
+
+showChikcen:
+	move esi, OFFSET word 6
+	jmp showRandomWord
+
+showChickenn:
+	move esi, OFFSET word 7
+	jmp showRandomWord
+
+showChicago:
+	move esi, OFFSET word 8
+	jmp showRandomWord
+
+showChonken:
+move esi, OFFSET word 9
+
 main ENDP
 END main
