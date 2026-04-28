@@ -74,40 +74,40 @@ gameLoop:
 	jmp showChonken
 
 showChicken:
-	move esi, OFFSET word1
+	mov esi, OFFSET word1
 	inc correctCount
 	jmp showRandomWord
 	
 showChuck:
-	move esi, OFFSET word2
+	mov esi, OFFSET word2
 	jmp showRandomWord
 
 showChick:
-	move esi, OFFSET word3
+	mov esi, OFFSET word3
 	jmp showRandomWord
 
 showDhicken:
-	move esi, OFFSET word4
+	mov esi, OFFSET word4
 	jmp showRandomWord
 
 showKitchen:
-	move esi, OFFSET word5
+	mov esi, OFFSET word5
 	jmp showRandomWord
 
 showChikcen:
-	move esi, OFFSET word6
+	mov esi, OFFSET word6
 	jmp showRandomWord
 
 showChickenn:
-	move esi, OFFSET word7
+	mov esi, OFFSET word7
 	jmp showRandomWord
 
 showChicago:
-	move esi, OFFSET word8
+	mov esi, OFFSET word8
 	jmp showRandomWord
 
 showChonken:
-move esi, OFFSET word9
+	mov esi, OFFSET word9
 
 showRandomWord:
 	;Generate random row from 5 to 19
@@ -165,7 +165,7 @@ correctAnswer:
 	mov dh, 12
 	mov dl, 22
 	call Gotoxy
-	move edx, OFFSET winMsg
+	mov edx, OFFSET winMsg
 	call WriteString
 	call Ctrl
 
