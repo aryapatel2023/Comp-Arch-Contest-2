@@ -137,7 +137,7 @@ pauseWord:
 	mov edx, OFFSET askMsg
 	call WriteString
 	call ReadInt
-	cmp playerGuess, eax
+	mov playerGuess, eax
 
 	mov eax, playerGuess
 	cmp eax, correctCount
