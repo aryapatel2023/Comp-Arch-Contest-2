@@ -41,12 +41,6 @@ main PROC
 	mov edx, OFFSET ruleMsg
 	call WriteString
 
-	mov dh, 5
-	mov dl, 14
-	call Gotoxy
-	mov edx, OFFSET ruleMsg2
-	call WriteString
-
 	mov eax, 2500
 	call Delay
 	call Clrscr
@@ -167,7 +161,7 @@ correctAnswer:
 	call Gotoxy
 	mov edx, OFFSET winMsg
 	call WriteString
-	call Ctrl
+	call Crlf
 
 done:
 	exit
