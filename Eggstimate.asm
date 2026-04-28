@@ -20,5 +20,34 @@ word8 BYTE "CHICAGO", 0
 word9 BYTE "CHONKEN", 0
 
 correctCount DWORD 0
-playerGuess DWORD?
+playerGuess DWORD ?
 roundsLeft DWORD 20
+
+.code
+main PROC
+	
+gameLoop:
+	mov eax, 8
+	call RandomRange
+
+	cmp eax, 0
+	je showChicken
+	cmp eax, 1
+	je showChuck
+	cmp eax, 2
+	je showChick
+	cmp eax, 3
+	je showDhicken
+	cmp eax, 4
+	je showKitchen
+	cmp eax, 5
+	je showChikcen
+	cmp eax, 6
+	je showChickenn
+	cmp eax, 7
+	je showChicago
+	cmp eax, 8
+	je ShowChonken
+
+main ENDP
+END main
