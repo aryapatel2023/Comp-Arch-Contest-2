@@ -27,7 +27,7 @@ roundsLeft DWORD 20
 main PROC
 	
 gameLoop:
-	mov eax, 8
+	mov eax, 9
 	call RandomRange
 
 	cmp eax, 0
@@ -46,8 +46,7 @@ gameLoop:
 	je showChickenn
 	cmp eax, 7
 	je showChicago
-	cmp eax, 8
-	je ShowChonken
+	jmp showChonken
 
 main ENDP
 END main
