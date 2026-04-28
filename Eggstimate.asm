@@ -49,40 +49,80 @@ gameLoop:
 	jmp showChonken
 
 showChicken:
-	move esi, OFFSET word 1
+	move esi, OFFSET word1
 	inc correctCount
 	jmp showRandomWord
 	
 showChuck:
-	move esi, OFFSET word 2
+	move esi, OFFSET word2
 	jmp showRandomWord
 
 showChick:
-	move esi, OFFSET word 3
+	move esi, OFFSET word3
 	jmp showRandomWord
 
 showDhicken:
-	move esi, OFFSET word 4
+	move esi, OFFSET word4
 	jmp showRandomWord
 
 showKitchen:
-	move esi, OFFSET word 5
+	move esi, OFFSET word5
 	jmp showRandomWord
 
 showChikcen:
-	move esi, OFFSET word 6
+	move esi, OFFSET word6
 	jmp showRandomWord
 
 showChickenn:
-	move esi, OFFSET word 7
+	move esi, OFFSET word7
 	jmp showRandomWord
 
 showChicago:
-	move esi, OFFSET word 8
+	move esi, OFFSET word8
 	jmp showRandomWord
 
 showChonken:
-move esi, OFFSET word 9
+move esi, OFFSET word9
+
+showRandomWord:
+	;Generate random row from 5 to 19
+	mov eax, 15
+	call RandomRange
+	add eax, 5
+	mov dh, al
+
+	;Generate random column from 5 to 64
+	mov eax, 60
+	call RandomRange
+	add eax, 5
+	mov dl, al
+
+	call Gotoxy
+
+	mov edx, esi
+	call WriteString
+
+pauseWord:
+	;Pauses the word for a brief moment before clearing it
+	mov eax, 500
+	call Delay
+	call Clrscr
+
+	dec roundsLeft
+	cmp roundsLeft, 0
+	jne gameLoop
+
+	mov dh, 10
+	mov dl, 24
+	call Gotoxy
+	mov edx, OFFSET askMsg
+	call WriteString
+	call ReadInt
+	cmp playerGuess, eax
+
+	mov eax, playerGuess
+	cmp eax, correctCount
+	je correctAnswer
 
 main ENDP
 END main
