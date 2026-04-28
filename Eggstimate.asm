@@ -46,7 +46,7 @@ gameLoop:
 	je showChickenn
 	cmp eax, 7
 	je showChicago
-	jmp ShowChonken
+	jmp showChonken
 
 main ENDP
 END main
