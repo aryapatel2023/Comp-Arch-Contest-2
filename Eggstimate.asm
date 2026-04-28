@@ -124,5 +124,28 @@ pauseWord:
 	cmp eax, correctCount
 	je correctAnswer
 
+wrongAnswer:
+	mov dh, 12
+	mov dl, 24
+	call Gotoxy
+	mov edx, OFFSET loseMsg
+	call WriteString 
+
+	mov eax, correctCount
+	call WriteDec
+	call Crlf
+	jmp done
+
+correctAnswer:
+	mov dh, 12
+	mov dl, 22
+	call Gotoxy
+	move edx, OFFSET winMsg
+	call WriteString
+	call Ctrl
+
+done:
+	exit
+
 main ENDP
 END main
